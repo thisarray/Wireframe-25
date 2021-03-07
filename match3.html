@@ -22,15 +22,15 @@ body {
 
 <body>
 <section id="imageLoader" class="hidden">
-  <img class="hidden" src="images/selected.png" alt="selected">
-  <img class="hidden" src="images/tile1.png" alt="tile1">
-  <img class="hidden" src="images/tile2.png" alt="tile2">
-  <img class="hidden" src="images/tile3.png" alt="tile3">
-  <img class="hidden" src="images/tile4.png" alt="tile4">
-  <img class="hidden" src="images/tile5.png" alt="tile5">
-  <img class="hidden" src="images/tile6.png" alt="tile6">
-  <img class="hidden" src="images/tile7.png" alt="tile7">
-  <img class="hidden" src="images/tile8.png" alt="tile8">
+  <img class="hidden" src="images/selected.png" alt="selected" data-name="selected">
+  <img class="hidden" src="images/tile1.png" alt="tile1" data-name="tile1">
+  <img class="hidden" src="images/tile2.png" alt="tile2" data-name="tile2">
+  <img class="hidden" src="images/tile3.png" alt="tile3" data-name="tile3">
+  <img class="hidden" src="images/tile4.png" alt="tile4" data-name="tile4">
+  <img class="hidden" src="images/tile5.png" alt="tile5" data-name="tile5">
+  <img class="hidden" src="images/tile6.png" alt="tile6" data-name="tile6">
+  <img class="hidden" src="images/tile7.png" alt="tile7" data-name="tile7">
+  <img class="hidden" src="images/tile8.png" alt="tile8" data-name="tile8">
 </section>
 
 <main>
@@ -179,16 +179,16 @@ def draw():
 
 <script>
 // board screen position and tile size
-boardx = 40;
-boardy = 40;
-tilesize = 40;
+const boardx = 40;
+const boardy = 40;
+const tilesize = 40;
 
 // board size
-columns = 8;
-rows = 12;
+const columns = 8;
+const rows = 12;
 
 // number of different tile colours
-numberoftiles = 9;
+const numberoftiles = 9;
 
 // calculate window size
 WIDTH = (boardx * 2) + (tilesize * columns);
@@ -210,8 +210,7 @@ function reset() {
   // start with the same tile in all positions
   tiles = [];
   for (let j = 0; j < rows; j++) {
-    let row = (new Array(columns)).fill(1);
-    tiles.push(row);
+    tiles.push((new Array(columns)).fill(1));
   }
   // ensure there are no matches initially
   for (let r = 0; r < rows; r++) {
